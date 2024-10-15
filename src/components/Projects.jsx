@@ -1,9 +1,9 @@
 import React from "react";
 import gif from "./img/Proj_1.jpg";
 import emply from "./img/Proj_2.jpg";
-import tata from "./img/Proj_3.jpg";
-import starbucks from "./img/Proj_4.jpg";
-import tesla from "./img/Proj_5.jpg";
+import tata from "./img/proj_3.jpg";
+import starbucks from "./img/proj_4.jpg";
+import tesla from "./img/proj_5.jpg";
 import portflio from "./img/proj-6.png";
 
 function Projects() {
