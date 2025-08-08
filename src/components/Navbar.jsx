@@ -5,7 +5,6 @@ import { Link } from "react-scroll";
 
 function Navbar() {
   const [menu, setMenu] = useState(false);
-  const [activeNav, setActiveNav] = useState("Home"); // Tracks the currently active item
 
   const navItems = [
     {
@@ -49,11 +48,7 @@ function Navbar() {
             <ul className="hidden md:flex space-x-8">
               {navItems.map(({ id, text }) => (
                 <li
-                  className={`hover:scale-105 duration-200 cursor-pointer ${
-                    activeNav === text
-                      ? "text-red-700 border-b-[2px] border-red-700"
-                      : "hover:border-b-[2px] hover:border-red-700"
-                  }`}
+                  className="hover:scale-105 duration-200 cursor-pointer"
                   key={id}
                 >
                   <Link
@@ -61,8 +56,9 @@ function Navbar() {
                     smooth={true}
                     duration={500}
                     offset={-70}
-                    className="hover:text-red-700"
-                    onClick={() => setActiveNav(text)} // Update the active item on click
+                    spy={true}
+                    activeClass="text-red-700 border-b-[2px] border-red-700"
+                    className="hover:text-red-700 hover:border-b-[2px] hover:border-red-700 pb-1 transition-all duration-200"
                   >
                     {text}
                   </Link>
@@ -79,46 +75,49 @@ function Navbar() {
 
         {/* mobile navbar */}
         {menu && (
-          <>
-            {/* Close icon positioned in the top-right corner */}
-            <div className="fixed top-4 right-4 z-50 md:hidden">
-              <IoCloseSharp
-                size={24}
-                className="cursor-pointer text-white"
-                onClick={() => setMenu(false)}
-              />
+          <div className="fixed inset-0 z-40 md:hidden">
+            {/* Backdrop */}
+            <div 
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              onClick={() => setMenu(false)}
+            ></div>
+            
+            {/* Menu Container */}
+            <div className="relative flex justify-center items-center min-h-screen p-4">
+              <div className="bg-gray-900/95 backdrop-blur-md border border-gray-700 rounded-2xl w-full max-w-sm mx-auto shadow-2xl">
+                {/* Close Button */}
+                <div className="flex justify-end p-4">
+                  <IoCloseSharp
+                    size={28}
+                    className="cursor-pointer text-white hover:text-red-700 transition-colors duration-200"
+                    onClick={() => setMenu(false)}
+                  />
+                </div>
+                
+                {/* Navigation Items */}
+                <div className="px-6 pb-8">
+                  <ul className="space-y-6">
+                    {navItems.map(({ id, text }) => (
+                      <li key={id}>
+                        <Link
+                          to={text}
+                          smooth={true}
+                          duration={500}
+                          offset={-70}
+                          spy={true}
+                          activeClass="text-red-700 bg-red-700/20 border border-red-700/50"
+                          className="block text-lg font-semibold py-3 px-4 rounded-lg transition-all duration-200 text-white hover:text-red-700 hover:bg-red-700/10"
+                          onClick={() => setMenu(false)}
+                        >
+                          {text}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
-
-            {/* The actual glass menu */}
-            <div className="fixed inset-0 z-40 backdrop-blur-md  border- rounded-md h-[300px] w-[280px] ml-[150px] sm:ml-[400px] sm:w-[350px]">
-              <ul className="flex flex-col h-full items-center justify-center space-y-3 text-xl">
-                {navItems.map(({ id, text }) => (
-                  <li
-                    className={`hover:scale-105 duration-200 font-semibold cursor-pointer ${
-                      activeNav === text
-                        ? "text-red-700 border-b-[2px] border-red-700"
-                        : "hover:border-b-[2px] hover:border-red-700"
-                    }`}
-                    key={id}
-                  >
-                    <Link
-                      to={text}
-                      smooth={true}
-                      duration={500}
-                      offset={-70}
-                      className="hover:text-red-700"
-                      onClick={() => {
-                        setMenu(false); // Close the menu when a link is clicked
-                        setActiveNav(text); // Update the active item on click
-                      }}
-                    >
-                      {text}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </>
+          </div>
         )}
       </div>
     </>
