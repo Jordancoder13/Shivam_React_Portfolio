@@ -141,7 +141,7 @@ function Projects() {
                       rel="noopener noreferrer"
                       className="flex-1 min-w-[70px]"
                     >
-                      <button className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-1.5 lg:py-1 xl:py-1 2xl:py-1 px-2 sm:px-3 lg:px-2 xl:px-2 2xl:px-2 rounded-lg transition-colors duration-200 text-xs sm:text-sm lg:text-xs xl:text-xs 2xl:text-xs">
+                      <button className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 lg:py-2 xl:py-1.5 2xl:py-1.5 px-3 sm:px-3 lg:px-3 xl:px-3 2xl:px-2 rounded-lg transition-colors duration-200 text-xs sm:text-sm lg:text-sm xl:text-sm 2xl:text-sm">
                         Source
                       </button>
                     </a>
@@ -154,7 +154,7 @@ function Projects() {
                       rel="noopener noreferrer"
                       className="flex-1 min-w-[70px]"
                     >
-                      <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1.5 lg:py-1 xl:py-1 2xl:py-1 px-2 sm:px-3 lg:px-2 xl:px-2 2xl:px-2 rounded-lg transition-colors duration-200 text-xs sm:text-sm lg:text-xs xl:text-xs 2xl:text-xs">
+                      <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 lg:py-2 xl:py-1.5 2xl:py-1.5 px-3 sm:px-3 lg:px-3 xl:px-3 2xl:px-2 rounded-lg transition-colors duration-200 text-xs sm:text-sm lg:text-sm xl:text-sm 2xl:text-sm">
                         Visit
                       </button>
                     </a>
