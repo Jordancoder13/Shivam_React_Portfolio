@@ -78,10 +78,10 @@ function Projects() {
           Project's
         </h1>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-6 xl:gap-5 2xl:gap-4">
           {cardItem.map(({ id, image, name, paragraph, links, visit, video }) => (
             <div
-              className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl shadow-2xl overflow-hidden hover:scale-105 transition-all duration-300 hover:shadow-red-700/20 hover:border-red-700/50 max-w-xs mx-auto"
+              className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl shadow-2xl overflow-hidden hover:scale-105 transition-all duration-300 hover:shadow-red-700/20 hover:border-red-700/50 w-full max-w-[380px] mx-auto lg:max-w-[350px] xl:max-w-[330px] 2xl:max-w-[310px]"
               key={id}
             >
               {/* Project Image */}
@@ -90,7 +90,7 @@ function Projects() {
                   <a href={visit} target="_blank" rel="noopener noreferrer">
                     <img
                       src={image}
-                      className="w-full h-44 sm:h-48 md:h-52 object-cover transition-transform duration-300 group-hover:scale-110"
+                      className="w-full h-44 sm:h-48 md:h-56 lg:h-52 xl:h-50 2xl:h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                       alt={name}
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -101,7 +101,7 @@ function Projects() {
                   <a href={links} target="_blank" rel="noopener noreferrer">
                     <img
                       src={image}
-                      className="w-full h-44 sm:h-48 md:h-52 object-cover transition-transform duration-300 group-hover:scale-110"
+                      className="w-full h-44 sm:h-48 md:h-56 lg:h-52 xl:h-50 2xl:h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                       alt={name}
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -112,24 +112,24 @@ function Projects() {
               </div>
 
               {/* Project Content */}
-              <div className="p-3 sm:p-4 md:p-5 space-y-3">
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-red-700 hover:text-red-600 transition-colors duration-200">
+              <div className="p-3 sm:p-4 md:p-6 lg:p-5 xl:p-4 2xl:p-4 space-y-3 lg:space-y-3 xl:space-y-3 2xl:space-y-2">
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-lg 2xl:text-base font-bold text-red-700 hover:text-red-600 transition-colors duration-200">
                   {name}
                 </h3>
                 
-                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed line-clamp-3">
+                <p className="text-xs sm:text-sm md:text-base lg:text-sm xl:text-sm 2xl:text-sm text-gray-300 leading-relaxed line-clamp-3">
                   {paragraph}
                 </p>
 
                 {/* Action Buttons */}
-                <div className="flex flex-wrap gap-2 pt-3">
+                <div className="flex flex-wrap gap-2 lg:gap-2 xl:gap-2 2xl:gap-2 pt-3 lg:pt-3 xl:pt-2 2xl:pt-2">
                   <a 
                     href={video} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex-1 min-w-[70px]"
                   >
-                    <button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-1.5 px-2 sm:px-3 rounded-lg transition-colors duration-200 text-xs sm:text-sm">
+                    <button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 lg:py-2 xl:py-1.5 2xl:py-1.5 px-3 sm:px-3 lg:px-3 xl:px-3 2xl:px-2 rounded-lg transition-colors duration-200 text-xs sm:text-sm lg:text-sm xl:text-sm 2xl:text-sm">
                       Video
                     </button>
                   </a>
@@ -141,7 +141,7 @@ function Projects() {
                       rel="noopener noreferrer"
                       className="flex-1 min-w-[70px]"
                     >
-                      <button className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-1.5 px-2 sm:px-3 rounded-lg transition-colors duration-200 text-xs sm:text-sm">
+                      <button className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-1.5 lg:py-1 xl:py-1 2xl:py-1 px-2 sm:px-3 lg:px-2 xl:px-2 2xl:px-2 rounded-lg transition-colors duration-200 text-xs sm:text-sm lg:text-xs xl:text-xs 2xl:text-xs">
                         Source
                       </button>
                     </a>
@@ -154,7 +154,7 @@ function Projects() {
                       rel="noopener noreferrer"
                       className="flex-1 min-w-[70px]"
                     >
-                      <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1.5 px-2 sm:px-3 rounded-lg transition-colors duration-200 text-xs sm:text-sm">
+                      <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1.5 lg:py-1 xl:py-1 2xl:py-1 px-2 sm:px-3 lg:px-2 xl:px-2 2xl:px-2 rounded-lg transition-colors duration-200 text-xs sm:text-sm lg:text-xs xl:text-xs 2xl:text-xs">
                         Visit
                       </button>
                     </a>

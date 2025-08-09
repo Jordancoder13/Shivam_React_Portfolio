@@ -39,7 +39,7 @@ function Home() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 lg:gap-10 xl:gap-12">
             {/* Content Section */}
             <div className="w-full lg:w-1/2 order-2 lg:order-1 text-center lg:text-left">
-              <div className="space-y-3 sm:space-y-4 lg:space-y-20">
+              <div className="space-y-3 sm:space-y-4 lg:space-y-10">
                 <span className="inline-block text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 font-medium tracking-wide uppercase">
                   Welcome In My Feed
                 </span>
